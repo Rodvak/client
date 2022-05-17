@@ -15,7 +15,7 @@ const Details = () => {
         axios.get(`http://localhost:8000/api/products/${id}`)
         .then(response => setProduct(response.data))
         .catch(err => console.log(err))
-    },[])
+    })
     
   return (
     <div>

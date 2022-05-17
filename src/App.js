@@ -11,7 +11,6 @@ function App() {
   return (
     <div>
       <BrowserRouter>
-        <h1>Product Manager</h1>
         <Routes>
           <Route path="/product/new" element={<CreateForm />} />
           <Route path="/product/:id" element={<Details />} />

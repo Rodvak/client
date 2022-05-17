@@ -13,7 +13,7 @@ const CreateForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    clearForm()
+    clearForm();
     axios
       .post(`http://localhost:8000/api/products/new`, {
         title,
@@ -31,40 +31,48 @@ const CreateForm = () => {
   };
 
   return (
-    <div>
-      <div>
+    <div className="container">
+      <div className="bg-light p-5 m-5 border border-secondary border-5">
+        <h1>Product Manager</h1>
         <form onSubmit={handleSubmit}>
-          <div>
-            <label>Title</label>
+          <div className="mb-3">
+            <label className="form-label">Title</label>
             <input
+              className="form-control"
               type="text"
               name="title"
               value={title}
               onChange={(e) => setTitle(e.target.value)}
             />
           </div>
-          <div>
-            <label>Price</label>
+          <div className="mb-3">
+            <label className="form-label">Price</label>
             <input
+              className="form-control"
               type="number"
               name="price"
               value={price}
               onChange={(e) => setPrice(e.target.value)}
             />
           </div>
-          <div>
-            <label>Description</label>
+          <div className="mb-3">
+            <label className="form-label">Description</label>
             <input
+              className="form-control"
               type="text"
               name="description"
               value={description}
               onChange={(e) => setDescription(e.target.value)}
             />
           </div>
-          <button type="submit">Create</button>
+          <div className="d-grid gap-2">
+            <button className="btn btn-primary fw-bold" type="submit">Create</button>
+          </div>
         </form>
       </div>
-      <AllProducts />
+      <div className="bg-light p-5 m-5 border border-secondary border-5">
+        <AllProducts />
+      </div>
     </div>
   );
 };

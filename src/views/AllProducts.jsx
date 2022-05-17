@@ -32,7 +32,7 @@ function AllProducts() {
             {
                 products.map((product,i) => (
                     <tr key={i}>
-                        <td><Link to={`/product/${product._id}`}> {product.title}</Link></td>
+                        <td><Link className="text-dark" to={`/product/${product._id}`}> {product.title}</Link></td>
                     </tr>
                 ))
             }
