@@ -33,7 +33,7 @@ const CreateForm = () => {
   return (
     <div className="container">
       <div className="bg-light p-5 m-5 border border-secondary border-5">
-        <h1>Product Manager</h1>
+        <h1 className="fs-1">Product Manager</h1>
         <form onSubmit={handleSubmit}>
           <div className="mb-3">
             <label className="form-label">Title</label>

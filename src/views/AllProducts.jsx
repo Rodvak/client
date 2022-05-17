@@ -25,7 +25,7 @@ function AllProducts() {
       <table>
         <thead>
           <tr>
-            <th>Title</th>
+            <th className="fs-2">Title</th>
           </tr>
         </thead>
         <tbody>
