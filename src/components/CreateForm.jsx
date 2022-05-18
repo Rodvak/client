@@ -1,26 +1,27 @@
 import React, { useState } from "react";
 import axios from "axios";
-import AllProducts from "./AllProducts";
 
 // form and send info to backend adter sumbit
 // axios to go to the backend
 // useState because we have a form
 
-const CreateForm = () => {
+const CreateForm = (props) => {
   const [title, setTitle] = useState("");
   const [price, setPrice] = useState(0);
   const [description, setDescription] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    clearForm();
-    axios
-      .post(`http://localhost:8000/api/products/new`, {
-        title,
-        price,
-        description,
-      })
-      .then((response) => console.log(response))
+    axios.post(`http://localhost:8000/api/products/new`, {
+      title,
+      price,
+      description,
+    })
+    .then((response) => {
+      console.log(response)
+      props.reload()
+      clearForm()
+    })
       .catch((err) => console.log(err));
   };
 
@@ -69,9 +70,6 @@ const CreateForm = () => {
             <button className="btn btn-primary fw-bold" type="submit">Create</button>
           </div>
         </form>
-      </div>
-      <div className="bg-light p-5 m-5 border border-secondary border-5">
-        <AllProducts />
       </div>
     </div>
   );
